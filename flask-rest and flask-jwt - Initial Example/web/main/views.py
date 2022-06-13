@@ -1,10 +1,8 @@
-from sre_constants import OP_IGNORE
 from web import app, jwt
-from flask_jwt_extended import create_access_token, get_csrf_token, unset_access_cookies, get_current_user, jwt_required, set_access_cookies, get_jwt, get_jwt_identity, unset_jwt_cookies, verify_jwt_in_request
+from flask_jwt_extended import create_access_token, jwt_required, set_access_cookies, get_jwt,unset_jwt_cookies, verify_jwt_in_request
 from flask_restful import Resource
 from flask import request, jsonify
 from datetime import datetime, timedelta
-
 
 @app.after_request
 def refresh_expiring_jwts(response):
